@@ -29,8 +29,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   }, [photoId, lastViewedPhoto, setLastViewedPhoto]);
 
   return (
-    <>
-      <Head>
+    <> <Head>
         <title>Next.js Conf 2022 Photos</title>
         <meta
           property="og:image"
@@ -167,7 +166,7 @@ export async function getStaticProps() {
   for (let i = 0; i < reducedResults.length; i++) {
     reducedResults[i].blurDataUrl = imagesWithBlurDataUrls[i];
   }
-
+  console.log("reducedREsults",reducedResults)
   return {
     props: {
       images: reducedResults,
